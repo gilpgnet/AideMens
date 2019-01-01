@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Por estar en la carpeta "res/values-v21" esta definición se aplica en
+dispositivos con la API 21 de Android (5.0 Lollipop)  -->
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Material.Light">
-	</style>
+  <!-- Aplica el estilo Material.Light -->
+  <style name="AppTheme" parent="@android:style/Theme.Material.Light"/>
 </resources>

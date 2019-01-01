@@ -1,22 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.amens" >
+<!-- manifest define la estructura de la aplicación. package='com.asaludo'
+  paquete de la aplicación. Es donde se crea la clase R. De preferencia
+  las clases de la aplicación también deben colocarse en este paquete.
+  Debe llevar al menos una vez el caracter punto. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+  package="com.amens">
+  <!-- Descripción de la aplicación.
+  
+  android:allowBackup="true"
+    Permite que los datos de la aplicación se respalden y restauren con adb.
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-		android:resizeableActivity = "true">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  android:icon="@drawable/ic_launcher"
+    Toma el archivo "res/drawable-hdpi/ic_launcher.png" o
+    "res/drawable-mdpi/ic_launcher.png", etc dependiendo de la densidad de pixeles
+    del dispositivo.
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-
+  android:label='@string/app_name'
+    Título de la aplicación. Aparece junto con el ícono en la página de
+    aplicaciones. Se toma del archivo "res/values/strings.xml"; en él está la
+    definición <string name="app_name">Test</string>. El nombre de la
+    definición es app_name y el valor es Test. Al sustituir el valor en la
+    declaración, se obtiene android:label="Test". Por lo tanto, el texto
+    que aparece junto al ícono en la página de aplicaciones es Test.
+    
+  android:theme="@style/AppTheme"
+    Colores, fonts y otras configuraciones de la apariencia de la aplicación.
+    Busca el archivo "res/values/styles.xml" o en dispositivos con la API 21 de
+    Android o posterior busca el archivo "res/values-v21/styles.xml". En su
+    interior busca la definición <style name="AppTheme" ...>...</style>
+  
+  android:resizeableActivity = "true"
+    Permite el manejo de ventanas múltiples. -->
+  <application android:allowBackup="true" 
+    android:icon="@drawable/ic_launcher" 
+    android:label="@string/app_name" 
+    android:theme="@style/AppTheme"    
+    android:resizeableActivity = "true">
+    <!-- Define una activity. Todas las actividades de la aplicación deben
+    declararse en este archivo para poder usarlas.
+    
+    android:name='.MainActivity'
+      El nombre de la aplicación de este element es MainActivity y está
+      localizada en el paquete de la aplicación, lo cual significa que se
+      llama com.test.MainActivity.
+      
+    android:label='@string/app_name'
+      Título de la activity. -->
+    <activity android:name=".MainActivity" 
+      android:label="@string/app_name">
+      <intent-filter>
+        <!-- Los 2 element que siguen indican que al iniciar la aplicación
+        se utiliza una instancia de esta actividad. -->
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
 </manifest>

@@ -1,19 +1,18 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+// Archivo build externo. Opciones para procesar el proyecto.
 buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.+'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+  // Sitios para descargar archivos.
+  repositories {
+    // Corresponde a https://bintray.com/bintray/jcenter
+    jcenter()
+  }
+  dependencies {
+    // Archivos para compilar android con gradle.
+    classpath 'com.android.tools.build:gradle:1.+'
+  }
 }
-
+// Opciones de configuración comunes a todos los módulos.
 allprojects {
-    repositories {
-        jcenter()
-    }
+  repositories {
+    jcenter()
+  }
 }
