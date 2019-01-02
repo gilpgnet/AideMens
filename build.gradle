@@ -4,6 +4,8 @@ buildscript {
   repositories {
     // Corresponde a https://bintray.com/bintray/jcenter
     jcenter()
+    // Corresponde a https://maven.google.com
+    google()
   }
   dependencies {
     // Archivos para compilar android con gradle.
@@ -14,5 +16,6 @@ buildscript {
 allprojects {
   repositories {
     jcenter()
+    google()
   }
 }
